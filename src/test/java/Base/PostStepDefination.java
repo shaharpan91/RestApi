@@ -1,4 +1,4 @@
-package RestAssured;
+package Base;
 
 import org.junit.Assert;
 import org.junit.Test;
@@ -7,14 +7,13 @@ import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import static io.restassured.RestAssured.*;
 
-public class restPostApi {
+public class PostStepDefination {
 
 	@Test
 	public void Registration() {
 
 		baseURI = "http://dummy.restapiexample.com/api/v1";
-		String requestBody = "{\n" + "  \"name\": \"Deep\",\n" + "  \"salary\": \"5000\",\n" + "  \"age\": \"20\"\n"
-				+ "}";
+		String requestBody = "{\"name\":\"Adi\",\"salary\":\"23244\",\"age\":\"23\"}";
 		
 		Response response = null;
 		try {
@@ -30,7 +29,7 @@ public class restPostApi {
 		
 		System.out.println("The status code recieved: " + response.getStatusCode());
 		System.out.println("Response body: " + response.asString());
-		System.out.println("Response body: " + response.asString().contains("Deep"));
+		System.out.println("Response body: " + response.asString().contains("Adi"));
 
 	}
 
