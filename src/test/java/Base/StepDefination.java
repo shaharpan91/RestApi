@@ -4,11 +4,12 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import io.restassured.http.ContentType;
-import method.RestGetMethods;
+import methods.RestGetMethods;
+import methods.RestPostMethod;
 
 import static io.restassured.RestAssured.*;
 
-public class GetStepDefination {
+public class StepDefination {
 
 	@Given("^Api is running for \"([^\"]*)\"$")
 	public void api_is_running_for(String url) throws Throwable {
@@ -26,5 +27,10 @@ public class GetStepDefination {
 
 	@And("^Status code Should be (\\d+)$")
 	public void status_code_Should_be(int statusCode) throws Throwable {
+	}
+	
+	@Given("^I perform post operation for \"([^\"]*)\"$")
+	public void i_perform_post_operation_for(String url) throws Throwable {
+		RestPostMethod.PerformPostWithParameter(url);
 	}
 }

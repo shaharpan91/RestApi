@@ -1,7 +1,7 @@
-package method;
+package methods;
 
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.*;
 
 import io.restassured.http.ContentType;
 
